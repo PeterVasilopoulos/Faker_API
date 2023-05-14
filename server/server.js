@@ -9,4 +9,7 @@ app.use(express.urlencoded({extended: true}));
 
 require("./configs/mongoose.config");
 
-const Routes = require
+const Routes = require("./routes/faker.routes");
+Routes(app);
+
+app.lissten(port, () => console.log(`We're live on port ${port}`));
