@@ -1,17 +1,13 @@
 // Import faker controller
 const FakerController = require("../controllers/faker.controller");
 
-// Get new user
 module.exports = (app) => {
-    app.get("/api/users/new", FakerController.createUser);
-}
+    // Get new user
+    app.get("/api/users/new", FakerController.getUser);
 
-// Get new company
-module.exports = (app) => {
-    app.get("/api/companies/new", FakerController.createCompany);
-}
+    // Get new compnay
+    app.get("/api/companies/new", FakerController.getCompany);
 
-// Get new company and user
-module.exports = (app) => {
-    app.get("/api/user/company", FakerController.createUser, FakerController.createCompany);
+    // Get new user and company
+    app.get("/api/user/company", FakerController.getUserCompany);
 }
